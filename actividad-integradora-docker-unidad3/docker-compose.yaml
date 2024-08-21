@@ -1,0 +1,38 @@
+version: '2.4'
+
+services:
+  webapp_flask:    
+    container_name: webapp_flask
+    platform: linux/amd64
+    depends_on:
+      - mysql_db    
+    build:
+      context: ./flask-webserver-assets
+      dockerfile: Dockerfile    
+    environment:
+      - MYSQL_DB_HOST=mysql_db
+      - MYSQL_DB_USER=root
+      - MYSQL_ROOT_PASSWORD=mysecretpassword
+      - MYSQL_DATABASE=mysql_db_modulo4
+    ports:
+      - "8080:5000"
+    networks:
+      - utn_network
+
+  mysql_db:
+    container_name: mysql_db
+    platform: linux/amd64
+    build:
+      context: ./mysql-assets
+      dockerfile: Dockerfile 
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysecretpassword
+      - MYSQL_DATABASE=mysql_db_modulo4   
+    ports:
+      - "3306:3306"
+    networks:
+      - utn_network      
+
+networks:
+  utn_network:
+    driver: bridge      

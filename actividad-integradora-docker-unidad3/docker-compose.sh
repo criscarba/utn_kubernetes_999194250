@@ -1,0 +1,1 @@
+docker-compose --project-name actividad-integradora-docker up --build 

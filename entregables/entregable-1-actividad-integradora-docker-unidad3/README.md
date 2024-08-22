@@ -12,7 +12,7 @@ El script `docker-compose.sh` automatiza la construcción y el levantamiento de 
 
 ## Estructura del Proyecto
 
-<img src="img/tree.png" alt="tree" width="200"/>   
+<img src="img/tree_actividad_1.png" alt="tree" width="200"/>
 
 ---
 

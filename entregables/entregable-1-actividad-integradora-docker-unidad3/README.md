@@ -1,14 +1,20 @@
 # Entrega 1 - Actividad Integradora Docker (Unidad 3)
 
+---
+
 ## Descripción
 
 Este proyecto es parte del curso **Docker y Kubernetes (2024)** de la **UTNBA**. En esta actividad, se ha creado un entorno utilizando Docker Compose que incluye un servidor Flask y una base de datos MySQL.
 
 El script `docker-compose.sh` automatiza la construcción y el levantamiento de los contenedores que se especifican en el archivo `docker-compose.yaml`.
 
+---
+
 ## Estructura del Proyecto
 
 ![tree](img/tree.png)
+
+---
 
 ## Ejecución del Script
 
@@ -27,6 +33,8 @@ cd entregables/entregable-1-actividad-integradora-docker-unidad3
 ```bash
 bash docker-compose.sh
 ```
+
+---
 
 ## Explicación de ejecución
 
@@ -47,6 +55,8 @@ Este comando ejecutará los siguientes pasos:
     * El contenedor de MySQL será inicializado con el archivo init.sql que contiene la estructura de base de datos inicial.
     * El servidor Flask estará accesible desde localhost en el puerto especificado en docker-compose.yaml.
 
+---
+
 ## Archivos Clave
 
 *   **docker-compose.sh**: Script que automatiza la ejecución de docker-compose.yaml.
@@ -55,6 +65,50 @@ Este comando ejecutará los siguientes pasos:
 *   **mysql-assets/Dockerfile**: Define la imagen de la base de datos MySQL.
 *   **mysql-assets/init.sql**: Script SQL que inicializa la base de datos con tablas o datos iniciales.
 
+---
+
+## Escenarios de pruebas
+Fueron planteados los siguientes 3 escenarios de prueba:
+
+1.  Realizar un GET request hacia **localhost:8080/** sin especificar parametros
+    
+    * Este caso de prueba simplemente mostrará un placeholder de la WebApp indicando como debe realizarse debidamente un request
+    
+        <img src="img/test_case_1.png" alt="test_case_1" width="800"/>    
+
+    * Link al script [test_case_1.sh](tests/test_case_1.sh)
+
+    * Como ejecutarlo: 
+      ```bash
+      bash test_case_1.sh 
+      ```
+
+2.  Realizar un GET request hacia **localhost:8080/** con parametros de tabla existente (Tabla 'personas')
+    
+    * Este caso de prueba mostrará los datos almacenados en la tabla 'personas'    
+        <img src="img/test_case_2.png" alt="test_case_2" width="400"/>
+
+
+    * Link al script [test_case_2.sh](tests/test_case_2.sh)
+
+    * Como ejecutarlo: 
+      ```bash
+      bash test_case_2.sh 
+      ```
+
+3.  Realizar un GET request hacia **localhost:8080/** con parametros de tabla inexistente (Tabla 'no_existe')
+    
+    * Este caso de prueba mostrará un error standard de la base de datos (MySQL) al realizar el request a la tabla 'no_existe'
+    
+        <img src="img/test_case_3.png" alt="test_case_3" width="600"/>    
+
+    * Link al script [test_case_3.sh](tests/test_case_3.sh)
+
+    * Como ejecutarlo: 
+      ```bash
+      bash test_case_3.sh 
+      ```
+---
 
 ## Cómo Detener los Contenedores
 

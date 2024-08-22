@@ -26,7 +26,7 @@ def query_table(table_name):
 @app.route('/')
 def hello():
     try:
-        return jsonify("Welcome to the WebApp! For querying a Table please include the WebApp URL + '/query/<table_name>'")
+        return jsonify("Bienvenido a la WebApp! Para acceder a los datos almacenados en las tablas, escribir la WebApp URL + '/query/<tab   le_name>'")
     except mysql.connector.Error as err:
         return jsonify({'error': str(err)}), 500
 
@@ -39,4 +39,4 @@ def query_endpoint(table_name):
         return jsonify({'error': str(err)}), 500
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)  # Use 0.0.0.0 to allow external access
+    app.run(host='0.0.0.0', debug=True)

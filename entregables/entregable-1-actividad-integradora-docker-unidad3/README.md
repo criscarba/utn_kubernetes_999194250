@@ -24,7 +24,7 @@ Para ejecutar el proyecto utilizando `docker-compose.sh`, realizar estos pasos:
 
 ```bash
 git clone https://github.com/criscarba/utn_kubernetes_999194250.git
-cd entregables/entregable-1-actividad-integradora-docker-unidad3	
+cd utn_kubernetes_999194250/entregables/entregable-1-actividad-integradora-docker-unidad3	
 ```
 2.	Docker y Docker Compose deben estar instalados en el sistema.
 
@@ -68,7 +68,12 @@ Este comando ejecutará los siguientes pasos:
 ---
 
 ## Escenarios de pruebas
-Fueron planteados los siguientes 3 escenarios de prueba:
+Fueron planteados los siguientes 3 escenarios de prueba.
+Navegar primero hacia la carpeta de los escenarios de prueba con el siguiente comando:
+
+```bash
+cd utn_kubernetes_999194250/entregables/entregable-1-actividad-integradora-docker-unidad3/tests	
+```
 
 1.  Realizar un GET request hacia **localhost:8080/** sin especificar parametros
     

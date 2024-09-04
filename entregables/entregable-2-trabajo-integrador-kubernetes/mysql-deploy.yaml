@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deploy
+  labels:
+    name: mysql-deploy
+    app: refactor-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: mysql-pod
+      app: refactor-app
+  template:
+    metadata:
+      name: mysql-pod
+      labels:
+        name: mysql-pod
+        app: refactor-app
+    spec:
+      containers:
+      - name: mysql
+        image: criscarba/mysql-db-image:latest
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: "mysecretpassword"
+          - name: MYSQL_DATABASE
+            value: "mysql_db_modulo4"

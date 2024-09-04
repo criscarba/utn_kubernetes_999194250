@@ -19,5 +19,5 @@
 
 ## Entregables
 - 🚀 **Entrega 1** - [Actividad integradora de Docker](entregables/entregable-1-actividad-integradora-docker-unidad3/)
-
+- 🚀 **Entrega 2** - [Trabajo Integrador de Kubernetes](entregables/entregable-2-trabajo-integrador-kubernetes/)
 ---
